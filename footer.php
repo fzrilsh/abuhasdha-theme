@@ -10,7 +10,7 @@
 
         <section class="flex flex-col md:grid grid-cols-3 gap-8 px-8 md:px-24 pb-12">
             <div class="text-white flex flex-col gap-4">
-                <p class="font-semibold"><?php echo get_theme_mod('footer_slogan') ?></p>
+                <p class="font-semibold"><?php bloginfo('description'); ?></p>
                 <a class="bg-dark-orange px-5 py-3 w-fit font-bold" href="mailto:<?php echo get_theme_mod('footer_email'); ?>">Kirim Email</a>
             </div>
 
