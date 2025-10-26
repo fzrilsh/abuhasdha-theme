@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
-<section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('<?php echo get_template_directory_uri(); ?>/assets/landing.jpg');">
+<section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('<?php echo esc_url(get_theme_mod('hero_image', get_template_directory_uri() . '/assets/images/default.jpg') ); ?>');">
     <div class="absolute inset-0 bg-gradient-to-r from-orange to-transparent w-[60%]"></div>
     <div class="relative z-10 flex flex-col justify-center items-start h-full text-white gap-4 w-full px-8 md:px-24">
         <h1 class="md:text-5xl text-3xl font-bold text-left md:w-[560px]">
-            Tyres You Can Rely On. Solusi Ban Alat Berat dan Industri Anda!
+            <?php echo get_theme_mod('hero_heading') ?>
         </h1>
         <p class="text-left md:text-lg text-md md:w-[440px]">
-            Dengan pengalaman lebih dari 40 tahun, Abuhasdha menyediakan ban Off-The-Road (OTR), truk, bus, dan industri yang tangguh, berkualitas, dan didukung layanan teknis menyeluruh.
+            <?php echo get_theme_mod('hero_description') ?>
         </p>
 
         <div class="text-left flex gap-4 font-bold">
@@ -79,11 +79,9 @@
         </div>
 
         <div class="flex md:flex-row flex-col gap-6 items-center justify-center">
-            <img class="w-[300px]" src="<?php echo get_template_directory_uri(); ?>/assets/about.png" alt="about">
+            <img class="w-[300px]" src="<?php echo esc_url(get_theme_mod('about_image', get_template_directory_uri() . '/assets/about.png')); ?>" alt="about">
             <div class="flex flex-col gap-6">
-                <p>PT. Abuhasdha didirikan pada tahun 1980 oleh Mr. Halim Soeganha, dan sejak itu menjadi salah satu penyedia ban OTR, truk, dan industri terkemuka di Indonesia. Dengan pengalaman lebih dari empat dekade, kami tidak hanya menawarkan produk berkualitas, tetapi juga menjadi mitra strategis bagi berbagai sektor industri.</p>
-                <p>Kami adalah distributor resmi Tianli Tyres (TUTRIC, China), produsen ban kelas dunia dengan lebih dari 300 ukuran, diekspor ke lebih dari 70 negara, dan didukung oleh riset serta standar internasional (ISO, REACH).</p>
-                <p>Kami percaya bahwa ban bukan sekadar komponen kendaraan, melainkan faktor penting dalam mendukung produktivitas, keamanan, dan keberlanjutan bisnis Anda.</p>
+                <?php echo nl2br(get_theme_mod('about_description')) ?>
             </div>
         </div>
     </div>
