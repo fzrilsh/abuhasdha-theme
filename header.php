@@ -7,10 +7,10 @@
     <?php wp_head(); ?>
 </head>
 
-<body <?php body_class('flex flex-col justify-center items-center font-merriweather-sans'); ?>>
+<body <?php body_class('flex flex-col justify-center items-center font-plus-jakarta-sans'); ?>>
     <?php wp_body_open(); ?>
     <nav class="w-full flex justify-between items-center fixed top-0 z-50">
-        <div class="w-full flex justify-between relative bg-white">
+        <div class="w-full flex relative bg-white">
             <a href="<?php echo esc_url(home_url('/')); ?>" class="md:px-8 px-4 py-4">
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/logo.png" alt="Logo">
             </a>
@@ -23,19 +23,18 @@
             <?php
             wp_nav_menu(array(
                 'theme_location' => 'primary_menu',
-                'container'      => 'ul',
-                'menu_class'     => 'md:flex flex-5 hidden h-full',
+                'container' => 'ul',
+                'menu_class' => 'md:flex flex-5 hidden h-full',
             ));
             ?>
         </div>
 
-        <div class="hidden md:hidden absolute top-[69px] bg-orange w-full text-white" id="mobilebar">
-            <?php
-            wp_nav_menu(array(
-                'theme_location' => 'primary_menu',
-                'container'      => 'ul',
-                'menu_class'     => '',
-            ));
-            ?>
-        </div>
+        <?php
+        wp_nav_menu(array(
+            'theme_location' => 'primary_menu',
+            'container' => 'ul',
+            'menu_class' => 'hidden md:hidden absolute top-[69px] bg-orange w-full text-white',
+            'menu_id' => 'mobilebar'
+        ));
+        ?>
     </nav>
