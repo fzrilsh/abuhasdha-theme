@@ -2,27 +2,35 @@
 
 function add_li_classes_to_nav_menu($classes, $item, $args) {
     if ($args->theme_location == 'primary_menu') {
-        $li_classes = "relative flex-1 after:content-[''] after:absolute after:right-[-1px] after:top-1/2 after:-translate-y-1/2 after:w-[3px] after:h-5 after:bg-white";
-        
-        $classes = array_merge($classes, explode(' ', $li_classes));
+        if (isset($args->menu_id) && $args->menu_id === 'mobilebar') {
+            // mobile
+            $classes[] = 'p-4 border-t border-white';
 
-        if (in_array('last', $classes)) {
-            $classes = array_diff($classes, ["after:content-['']", "after:absolute", "after:right-[-1px]", "after:top-1/2", "after:-translate-y-1/2", "after:w-[3px]", "after:h-5", "after:bg-white"]);
+            if ($item->current) {
+                $classes[] = 'bg-dark-orange';
+            }
+        } else {
+            // desktop
+            $li_classes = "relative flex-1 after:content-[''] after:absolute after:right-[-1px] after:top-1/2 after:-translate-y-1/2 after:w-[3px] after:h-5 after:bg-white";
+            $classes = array_merge($classes, explode(' ', $li_classes));
         }
     }
+
     return $classes;
 }
 add_filter('nav_menu_css_class', 'add_li_classes_to_nav_menu', 10, 3);
 
-
 function add_a_classes_to_nav_menu($atts, $item, $args) {
     if ($args->theme_location == 'primary_menu') {
-        $base_classes = 'md:py-6 w-full text-white h-full flex justify-center items-center';
-        
-        if ($item->current) {
-            $atts['class'] = $base_classes . ' bg-dark-orange';
+        if (isset($args->menu_id) && $args->menu_id === 'mobilebar') {
+            // mobile
+            $atts['class'] = 'block text-white';
         } else {
-            $atts['class'] = $base_classes . ' bg-orange';
+            // desktop
+            $base_classes = 'md:py-6 w-full text-white h-full flex justify-center items-center';
+            $atts['class'] = $item->current
+                ? $base_classes . ' bg-dark-orange'
+                : $base_classes . ' bg-orange';
         }
     }
     return $atts;
