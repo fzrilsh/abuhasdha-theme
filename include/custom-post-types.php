@@ -64,7 +64,7 @@ function create_cpt_produk()
         'label'                 => __('Produk', 'abuhasdha'),
         'description'           => __('Konten untuk produk perusahaan', 'abuhasdha'),
         'labels'                => $labels,
-        'supports'              => array('title', 'editor', 'thumbnail'),
+        'supports'              => array('title'),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
@@ -74,12 +74,38 @@ function create_cpt_produk()
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'can_export'            => true,
-        'has_archive'           => 'produk',
         'exclude_from_search'   => false,
-        'publicly_queryable'    => true,
         'capability_type'       => 'post',
-        'rewrite'               => array('slug' => 'produk'),
+        'rewrite'               => array('slug' => 'produk', 'with_front' => false),
+        'show_in_rest'          => true,
+        'publicly_queryable'    => true,
+        'has_archive'           => true,
     );
     register_post_type('produk', $args);
 }
 add_action('init', 'create_cpt_produk', 0);
+
+function set_title_readonly() {
+    global $post;
+    if ($post && $post->post_type === 'produk') {
+        ?>
+        <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const titleInput = document.getElementById('title');
+            const permalinkDiv = document.getElementById('edit-slug-box');
+            
+            if (titleInput) {
+                titleInput.readOnly = true;
+                titleInput.style.backgroundColor = '#f8f8f8';
+                titleInput.style.cursor = 'not-allowed';
+            }
+
+            if (permalinkDiv) {
+                permalinkDiv.style.display = 'block';
+            }
+        });
+        </script>
+        <?php
+    }
+}
+add_action('admin_footer', 'set_title_readonly');
