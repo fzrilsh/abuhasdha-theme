@@ -5,10 +5,10 @@
  * @package abuhasdha
  */
 
-require get_template_directory() . '/inc/setup.php';
-require get_template_directory() . '/inc/enqueue.php';
-require get_template_directory() . '/inc/custom-post-types.php';
-require get_template_directory() . '/inc/customizer.php';
-require get_template_directory() . '/inc/dashboard.php';
-require get_template_directory() . '/inc/custom-login.php';
-require get_template_directory() . '/inc/nav.php';
+require get_template_directory() . '/include/setup.php';
+require get_template_directory() . '/include/enqueue.php';
+require get_template_directory() . '/include/custom-post-types.php';
+require get_template_directory() . '/include/customizer.php';
+require get_template_directory() . '/include/dashboard.php';
+require get_template_directory() . '/include/custom-login.php';
+require get_template_directory() . '/include/nav.php';
