@@ -8,18 +8,6 @@ function register_footer_section($wp_customize)
         'priority'   => 30,
     ));
 
-    // Slogan
-    $wp_customize->add_setting('footer_slogan', array(
-        'default'           => "Tim kami siap membantu kebutuhan ban dan layanan teknis Anda.",
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-    $wp_customize->add_control('footer_slogan_control', array(
-        'label'      => __('Slogan', 'abuhasdha'),
-        'section'    => FOOTER,
-        'settings'   => 'footer_slogan',
-        'type'       => 'text',
-    ));
-
     // Email
     $wp_customize->add_setting('footer_email', array(
         'default'           => "abuhasdha80@cbn.net.id",
