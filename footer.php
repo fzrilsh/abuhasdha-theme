@@ -10,8 +10,8 @@
 
         <section class="flex flex-col md:grid grid-cols-3 gap-8 px-8 md:px-24 pb-12">
             <div class="text-white flex flex-col gap-4">
-                <p class="font-semibold">Tim kami siap membantu kebutuhan ban dan layanan teknis Anda.</p>
-                <a class="bg-dark-orange px-5 py-3 w-fit font-bold" href="#">Kirim Email</a>
+                <p class="font-semibold"><?php echo get_theme_mod('footer_slogan') ?></p>
+                <a class="bg-dark-orange px-5 py-3 w-fit font-bold" href="mailto:<?php echo get_theme_mod('footer_email'); ?>">Kirim Email</a>
             </div>
 
             <div class="text-white flex flex-col gap-4">
@@ -21,7 +21,7 @@
                     </div>
                     <div class="flex flex-col gap-1">
                         <h4 class="font-bold">Email</h4>
-                        <a href="mailto:abuhasdha80@cbn.net.id">abuhasdha80@cbn.net.id</a>
+                        <a href="mailto:<?php echo get_theme_mod('footer_email'); ?>"><?php echo get_theme_mod('footer_email'); ?></a>
                     </div>
                 </div>
 
@@ -32,8 +32,16 @@
                     <div class="flex flex-col gap-1">
                         <h4 class="font-bold">Telepon</h4>
                         <div class="flex flex-col gap-1">
-                            <a href="tel:(021) 63863210">(021) 63863210</a>
-                            <a href="tel:(021) 63863012">(021) 63863012</a>
+                            <?php
+                            $phones = preg_split('/\r\n|\r|\n/', get_theme_mod('footer_phone'), -1, PREG_SPLIT_NO_EMPTY);
+
+                            foreach ($phones as $phone) :
+                                $phone_trimmed = trim($phone);
+                            ?>
+                                <a href="tel:<?php echo esc_attr($phone_trimmed); ?>">
+                                    <?php echo esc_html($phone_trimmed); ?>
+                                </a>
+                            <?php endforeach; ?>
                         </div>
                     </div>
                 </div>
@@ -47,20 +55,20 @@
                     <div class="flex flex-col gap-1">
                         <h4 class="font-bold">Lokasi</h4>
                         <div class="flex flex-col gap-1">
-                            <a href="https://share.google/Yr2nBExkCfqfErbXY">Jl. Kyai Caringin No.14B, Jakarta, 10150, DKI Jakarta, Indonesia.</a>
+                            <a href="<?php echo get_theme_mod('footer_address_url') ?>"><?php echo get_theme_mod('footer_address') ?></a>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
         <section class="bg-dark-orange py-3 text-center">
-            <p class="font-semibold text-white">PT ABUHASDHA & CO | <?php echo date('Y'); ?> <?php bloginfo('name'); ?></p>
+            <p class="font-semibold text-white"><?php bloginfo('name'); ?> | <?php echo date('Y'); ?></p>
         </section>
     </footer>
 
     <?php
     wp_footer();
     ?>
-</body>
+    </body>
 
-</html>
+    </html>
