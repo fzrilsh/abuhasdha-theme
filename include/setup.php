@@ -1,5 +1,12 @@
 <?php
 
+function remove_page_support()
+{
+    remove_post_type_support('page', 'editor');
+    remove_post_type_support('page', 'title');
+}
+add_action('init', 'remove_page_support');
+
 function manage_theme_support()
 {
     // register dynamic navigation menu
