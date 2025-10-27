@@ -22,7 +22,7 @@ function create_cpt_layanan()
         'label'                 => __('Layanan', 'abuhasdha'),
         'description'           => __('Konten untuk layanan perusahaan', 'abuhasdha'),
         'labels'                => $labels,
-        'supports'              => array('title', 'editor'),
+        'supports'              => array(''),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
@@ -32,11 +32,12 @@ function create_cpt_layanan()
         'show_in_admin_bar'     => true,
         'show_in_nav_menus'     => true,
         'can_export'            => true,
-        'has_archive'           => 'layanan',
         'exclude_from_search'   => false,
-        'publicly_queryable'    => true,
         'capability_type'       => 'post',
-        'rewrite'               => array('slug' => 'layanan'),
+        'rewrite'               => array('slug' => 'layanan', 'with_front' => false),
+        'show_in_rest'          => true,
+        'publicly_queryable'    => true,
+        'has_archive'           => true,
     );
     register_post_type('layanan', $args);
 }
