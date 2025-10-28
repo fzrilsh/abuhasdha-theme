@@ -3,27 +3,6 @@
     "title": "Product",
     "fields": [
         {
-            "key": "field_68fdcc520d169",
-            "label": "Description",
-            "name": "description",
-            "aria-label": "",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
             "key": "field_68fdc33787031",
             "label": "Category",
             "name": "category",
@@ -219,7 +198,7 @@
         },
         {
             "key": "field_68fde2d934fdb",
-            "label": "Images",
+            "label": "Product Images",
             "name": "images",
             "aria-label": "",
             "type": "text",
@@ -244,7 +223,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "produk"
+                "value": "product"
             }
         ]
     ],
@@ -258,5 +237,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761469623
+    "modified": 1761626666
 }
