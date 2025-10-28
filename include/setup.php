@@ -1,12 +1,5 @@
 <?php
 
-function remove_page_support()
-{
-    remove_post_type_support('page', 'editor');
-    remove_post_type_support('page', 'title');
-}
-add_action('init', 'remove_page_support');
-
 function manage_theme_support()
 {
     // register dynamic navigation menu
@@ -16,7 +9,8 @@ function manage_theme_support()
 
     // register needed theme support
     add_theme_support('custom-logo');
-    add_theme_support( 'title-tag' );
+    add_theme_support('title-tag');
+    add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme', 'manage_theme_support');
 
@@ -49,11 +43,11 @@ function show_shortcut_widget()
     echo '
     <p>Selamat datang di dashboard website company profile Anda. Gunakan link di bawah ini untuk mengelola konten penting dengan cepat.</p>
     <ul>
-        <li>&#9998; <a href="post-new.php?post_type=produk"><strong>Tambah Produk Baru</strong></a></li>
-        <li>&#9998; <a href="post-new.php?post_type=layanan"><strong>Tambah Layanan Baru</strong></a></li>
+        <li>&#9998; <a href="post-new.php?post_type=product"><strong>Tambah Produk Baru</strong></a></li>
+        <li>&#9998; <a href="post-new.php?post_type=service"><strong>Tambah Layanan Baru</strong></a></li>
         <br>
-        <li>&#128195; <a href="edit.php?post_type=produk">Lihat Semua Produk</a></li>
-        <li>&#128195; <a href="edit.php?post_type=layanan">Lihat Semua Layanan</a></li>
+        <li>&#128195; <a href="edit.php?post_type=product">Lihat Semua Produk</a></li>
+        <li>&#128195; <a href="edit.php?post_type=service">Lihat Semua Layanan</a></li>
     </ul>
     <hr>
     <p>Butuh bantuan? Hubungi saya di <a href="mailto:fazril.hillaby@binus.ac.id">fazril.hillaby@binus.ac.id</a>.</p>
