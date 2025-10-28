@@ -1,7 +1,7 @@
 <?php
 
-// create custom post type for 'layanan'
-function create_cpt_layanan()
+// create custom post type for 'service'
+function create_cpt_service()
 {
     $labels = array(
         'name'                  => _x('Layanan', 'Layanan', 'abuhasdha'),
@@ -20,7 +20,7 @@ function create_cpt_layanan()
     );
     $args = array(
         'label'                 => __('Layanan', 'abuhasdha'),
-        'description'           => __('Konten untuk layanan perusahaan', 'abuhasdha'),
+        'description'           => __('Konten untuk service perusahaan', 'abuhasdha'),
         'labels'                => $labels,
         'supports'              => array(''),
         'hierarchical'          => false,
@@ -34,17 +34,17 @@ function create_cpt_layanan()
         'can_export'            => true,
         'exclude_from_search'   => false,
         'capability_type'       => 'post',
-        'rewrite'               => array('slug' => 'layanan', 'with_front' => false),
+        'rewrite'               => array('slug' => 'service', 'with_front' => false),
         'show_in_rest'          => true,
         'publicly_queryable'    => true,
         'has_archive'           => true,
     );
-    register_post_type('layanan', $args);
+    register_post_type('service', $args);
 }
-add_action('init', 'create_cpt_layanan', 0);
+add_action('init', 'create_cpt_service', 0);
 
 // create custom post type for products
-function create_cpt_produk()
+function create_cpt_product()
 {
     $labels = array(
         'name'                  => _x('Produk', 'Produk', 'abuhasdha'),
@@ -63,9 +63,9 @@ function create_cpt_produk()
     );
     $args = array(
         'label'                 => __('Produk', 'abuhasdha'),
-        'description'           => __('Konten untuk produk perusahaan', 'abuhasdha'),
+        'description'           => __('Konten untuk product perusahaan', 'abuhasdha'),
         'labels'                => $labels,
-        'supports'              => array('title'),
+        'supports'              => array('title', 'editor', 'thumbnail'),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
@@ -77,36 +77,11 @@ function create_cpt_produk()
         'can_export'            => true,
         'exclude_from_search'   => false,
         'capability_type'       => 'post',
-        'rewrite'               => array('slug' => 'produk', 'with_front' => false),
-        'show_in_rest'          => true,
+        'rewrite'               => array('slug' => 'product', 'with_front' => false),
+        'show_in_rest'          => false,
         'publicly_queryable'    => true,
         'has_archive'           => true,
     );
-    register_post_type('produk', $args);
+    register_post_type('product', $args);
 }
-add_action('init', 'create_cpt_produk', 0);
-
-function set_title_readonly() {
-    global $post;
-    if ($post && $post->post_type === 'produk') {
-        ?>
-        <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const titleInput = document.getElementById('title');
-            const permalinkDiv = document.getElementById('edit-slug-box');
-            
-            if (titleInput) {
-                titleInput.readOnly = true;
-                titleInput.style.backgroundColor = '#f8f8f8';
-                titleInput.style.cursor = 'not-allowed';
-            }
-
-            if (permalinkDiv) {
-                permalinkDiv.style.display = 'block';
-            }
-        });
-        </script>
-        <?php
-    }
-}
-add_action('admin_footer', 'set_title_readonly');
+add_action('init', 'create_cpt_product', 0);
