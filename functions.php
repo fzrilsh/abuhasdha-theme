@@ -12,5 +12,4 @@ require get_template_directory() . '/include/customizer.php';
 require get_template_directory() . '/include/dashboard.php';
 require get_template_directory() . '/include/custom-login.php';
 require get_template_directory() . '/include/nav.php';
-require get_template_directory() . '/include/product-slug-maker.php';
 require get_template_directory() . '/include/override-acf.php';
