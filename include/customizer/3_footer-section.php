@@ -4,7 +4,7 @@ const FOOTER = 'footer_section';
 function register_footer_section($wp_customize)
 {
     $wp_customize->add_section(FOOTER, array(
-        'title'      => __('Home - Footer Section', 'abuhasdha'),
+        'title'      => __('Footer Section', 'abuhasdha'),
         'priority'   => 30,
     ));
 
