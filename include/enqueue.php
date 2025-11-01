@@ -26,3 +26,10 @@ function load_scripts()
     );
 }
 add_action('wp_enqueue_scripts', 'load_scripts');
+
+function theme_customizer_gallery(){
+    // custom gallery
+    wp_enqueue_media();
+    wp_enqueue_script('theme-customizer-gallery', get_template_directory_uri() . '/src/js/customizer-gallery.js', ['jquery'], false, true);
+}
+add_action('customize_controls_enqueue_scripts', 'theme_customizer_gallery');
