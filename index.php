@@ -11,8 +11,8 @@
         </p>
 
         <div class="text-left flex gap-4 font-bold">
-            <a class="bg-dark-orange px-5 py-3" href="#">Lihat Produk</a>
-            <a class="bg-white px-5 py-3 text-dark-orange flex flex-row gap-2 justify-center items-center" href="#">
+            <a href="<?= home_url("/products") ?>" class="bg-dark-orange px-5 py-3">Lihat Produk</a>
+            <a href="tel:<?= preg_split('/\r\n|\r|\n/', get_theme_mod('footer_phone'), -1, PREG_SPLIT_NO_EMPTY)[0] ?>" class="bg-white px-5 py-3 text-dark-orange flex flex-row gap-2 justify-center items-center">
                 Hubungi Kami
                 <svg width="18" height="18" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M7.45801 1.5L7.69824 1.50977C8.25555 1.55645 8.78891 1.76502 9.23242 2.11133C9.67588 2.45764 10.0071 2.92479 10.1875 3.4541L10.2559 3.68457L11.6172 9.12793L11.6611 9.33887C11.844 10.3983 11.4208 11.4814 10.5479 12.1348L10.5488 12.1357L9.05566 13.2549C9.72373 15.0051 10.7535 16.5953 12.0791 17.9209C13.4044 19.2462 14.9943 20.2753 16.7441 20.9434L17.8643 19.4512C18.5593 18.5239 19.7434 18.1011 20.8711 18.3828L26.3154 19.7441H26.3145C27.5999 20.0648 28.4999 21.2192 28.5 22.542V24.2305C28.5 25.3627 28.0506 26.4494 27.25 27.25C26.4494 28.0506 25.3627 28.5 24.2305 28.5H21.4619C10.4378 28.5 1.5 19.5622 1.5 8.53809V5.76953C1.5 4.63726 1.94936 3.55064 2.75 2.75C3.55064 1.94936 4.63726 1.5 5.76953 1.5H7.45801Z" stroke="#D4480D" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
@@ -214,11 +214,13 @@
             </div>
 
             <button id="prevBtn" class="absolute left-10 md:left-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer">
-            ◀
+                ◀
             </button>
             <button id="nextBtn" class="absolute right-10 md:right-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer">
-            ▶
+                ▶
             </button>
+
+            <div id="carousel-dots" class="w-full h-fit flex justify-center mt-6 gap-2"></div>
         </div>
     </div>
 </section>
