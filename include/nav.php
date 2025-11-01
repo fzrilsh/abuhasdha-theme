@@ -34,11 +34,14 @@ function add_a_classes_to_nav_menu($atts, $item, $args)
         } else {
             // desktop
             $base_classes = 'md:py-6 w-full text-white h-full flex justify-center items-center';
-            $atts['class'] = $item->current
-                ? $base_classes . ' bg-dark-orange'
-                : $base_classes . ' bg-orange';
+            $atts['class'] = $base_classes . ' bg-orange';
+
+            if ($item->current || $item->current_item_ancestor) {
+                $atts['class'] = $base_classes . ' bg-dark-orange';
+            }
         }
     }
+
     return $atts;
 }
 add_filter('nav_menu_link_attributes', 'add_a_classes_to_nav_menu', 10, 3);
