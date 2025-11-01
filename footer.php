@@ -1,4 +1,4 @@
-    <footer class="bg-dark-gray w-full flex flex-col gap-8">
+    <footer id="contact" class="bg-dark-gray w-full flex flex-col gap-8">
         <div class="px-8 md:px-24 pt-12 pb-4">
             <div class="relative overflow-hidden flex justify-center items-center">
                 <div class="w-full h-[3px] bg-white absolute bottom-1"></div>
@@ -54,6 +54,9 @@
                     </div>
                     <div class="flex flex-col gap-1">
                         <h4 class="font-bold">Lokasi</h4>
+                        <div class="flex flex-col gap-1">
+                            <a href="<?php echo get_theme_mod('footer_address_url') ?>"><?php echo get_theme_mod('footer_address') ?></a>
+                        </div>
                         <div class="flex flex-col gap-1">
                             <a href="<?php echo get_theme_mod('footer_address_url') ?>"><?php echo get_theme_mod('footer_address') ?></a>
                         </div>
