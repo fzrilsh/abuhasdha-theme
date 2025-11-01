@@ -165,7 +165,7 @@
     </div>
 </section>
 
-<section class="bg-white w-full flex flex-col gap-18 bg-no-repeat bg-center bg-cover">
+<section id="gallery" class="bg-white w-full flex flex-col gap-18 bg-no-repeat bg-center bg-cover">
     <div class="px-10 md:px-24 pt-18 pb-2">
         <div class="relative overflow-hidden flex justify-center items-center">
             <div class="w-full h-[3px] bg-dark-orange absolute bottom-1"></div>
@@ -177,10 +177,7 @@
 
     <div class="flex flex-col justify-center items-center pt-2 pb-24">
         <div class="relative w-[100vw] md:w-[85vw] overflow-hidden px-8 md:px-24">
-            <!-- Carousel Track -->
             <div id="carousel-track" class="flex overflow-x-scroll snap-x snap-mandatory carousel-track scroll-smooth">
-            
-                <!-- Slide 1 -->
                 <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4">
                     <?php
                         $gallery_ids = explode(',', get_theme_mod('custom_gallery_images', ''));
@@ -211,7 +208,6 @@
                 </div>
             </div>
 
-            <!-- Tombol Navigasi -->
             <button id="prevBtn" class="absolute left-10 md:left-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer">
             ◀
             </button>
