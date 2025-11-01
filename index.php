@@ -193,18 +193,6 @@
                             echo '</div>';
                         }
                     ?>
-                    <div class="flex flex-row gap-3">
-                        <img class="md:w-full w-[30%]" src="<?= get_stylesheet_directory_uri() ?>/assets/Mask group-2.png" alt="">
-                        <img class="md:w-full w-[70%]" src="<?= get_stylesheet_directory_uri() ?>/assets/Mask group-4.png" alt="">
-                        <img class="md:w-full w-[30%]" src="<?= get_stylesheet_directory_uri() ?>/assets/Mask group.png" alt="">
-                        <img class="md:w-full w-[70%]" src="<?= get_stylesheet_directory_uri() ?>/assets/Gemini_Generated_Image_z00hs1z00hs1z00h 1.png" alt="">
-                    </div>
-                    <div class="flex flex-row gap-3">
-                        <img class="md:w-full w-[70%]" src="<?= get_stylesheet_directory_uri() ?>/assets/Mask group-3.png" alt="">
-                        <img class="md:w-full w-[30%]" src="<?= get_stylesheet_directory_uri() ?>/assets/Mask group-5.png" alt="">
-                        <img class="md:w-full w-[70%]" src="<?= get_stylesheet_directory_uri() ?>/assets/Mask group-1.png" alt="">
-                        <img class="md:w-full w-[30%]" src="<?= get_stylesheet_directory_uri() ?>/assets/Gemini_Generated_Image_pfglnzpfglnzpfgl 1.png" alt="">
-                    </div>
                 </div>
             </div>
 
