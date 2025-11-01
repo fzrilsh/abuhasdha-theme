@@ -209,8 +209,6 @@
                         <img class="md:w-full w-[30%]" src="<?= get_stylesheet_directory_uri() ?>/assets/Gemini_Generated_Image_pfglnzpfglnzpfgl 1.png" alt="">
                     </div>
                 </div>
-
-                <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4"></div>
             </div>
 
             <!-- Tombol Navigasi -->
