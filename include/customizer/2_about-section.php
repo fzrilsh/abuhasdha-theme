@@ -4,7 +4,7 @@ const ABOUT = 'about_section';
 function register_about_section($wp_customize)
 {
     $wp_customize->add_section(ABOUT, array(
-        'title'      => __('Home - About Section', 'abuhasdha'),
+        'title'      => __('About Section', 'abuhasdha'),
         'priority'   => 30,
     ));
 
