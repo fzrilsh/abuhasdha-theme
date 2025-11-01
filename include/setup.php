@@ -44,7 +44,7 @@ add_filter('pre_get_document_title', function($title) {
     }
 
     return $title;
-});
+}, 999);
 
 function show_shortcut_widget()
 {
