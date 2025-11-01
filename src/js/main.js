@@ -59,3 +59,18 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+// Carousel
+const track = document.getElementById("carousel-track");
+const slides = document.querySelectorAll("#carousel-track > div");
+const slideWidth = slides[0].offsetWidth;
+const nextBtn = document.getElementById("nextBtn");
+const prevBtn = document.getElementById("prevBtn");
+
+nextBtn.addEventListener("click", () => {
+    track.scrollBy({ left: slideWidth, behavior: "smooth" });
+});
+
+prevBtn.addEventListener("click", () => {
+    track.scrollBy({ left: -slideWidth, behavior: "smooth" });
+});
