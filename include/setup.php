@@ -38,6 +38,14 @@ function manage_widget_dashboard()
 }
 add_action('wp_dashboard_setup', 'manage_widget_dashboard');
 
+add_filter('pre_get_document_title', function($title) {
+    if (is_front_page()) {
+        return get_bloginfo('name');
+    }
+
+    return $title;
+});
+
 function show_shortcut_widget()
 {
     echo '
