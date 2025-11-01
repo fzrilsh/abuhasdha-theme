@@ -16,6 +16,9 @@ function load_scripts()
     // Enqueue main js script
     wp_enqueue_script('main-js', get_template_directory_uri() . '/src/js/main.js', [], null, true); // true = muat di footer
 
+    // Enqueue carousel
+    wp_enqueue_script('carousel-js', get_template_directory_uri() . '/src/js/carousel.js', [], null, true);
+
     // register tailwind style
     wp_enqueue_style(
         'tailwind-styles',
@@ -28,7 +31,6 @@ function load_scripts()
 add_action('wp_enqueue_scripts', 'load_scripts');
 
 function theme_customizer_gallery(){
-    // custom gallery
     wp_enqueue_media();
     wp_enqueue_script('theme-customizer-gallery', get_template_directory_uri() . '/src/js/customizer-gallery.js', ['jquery'], false, true);
 }
