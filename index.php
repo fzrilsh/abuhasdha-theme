@@ -184,7 +184,7 @@
                         $chunks = array_chunk($gallery_ids, 3);
 
                         foreach ($chunks as $chunk) {
-                            echo '<div class="flex flex-row gap-3 mb-4 justify-center">';
+                            echo '<div class="flex flex-row gap-3">';
                             foreach ($chunk as $id) {
                                 $url = wp_get_attachment_image_url($id, 'large');
                                 $caption = wp_get_attachment_caption($id);
@@ -194,6 +194,8 @@
                         }
                     ?>
                 </div>
+
+                <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4"></div>
             </div>
 
             <button id="prevBtn" class="absolute left-10 md:left-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer">
