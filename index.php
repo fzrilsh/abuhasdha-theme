@@ -181,7 +181,7 @@
                 <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4">
                     <?php
                         $gallery_ids = explode(',', get_theme_mod('custom_gallery_images', ''));
-                        $chunks = array_chunk($gallery_ids, 3);
+                        $chunks = array_chunk($gallery_ids, 4);
 
                         foreach ($chunks as $chunk) {
                             echo '<div class="flex flex-row gap-3">';
