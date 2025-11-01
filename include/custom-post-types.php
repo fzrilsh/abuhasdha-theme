@@ -22,7 +22,7 @@ function create_cpt_service()
         'label'                 => __('Layanan', 'abuhasdha'),
         'description'           => __('Konten untuk service perusahaan', 'abuhasdha'),
         'labels'                => $labels,
-        'supports'              => array(''),
+        'supports'              => array('title', 'editor', 'thumbnail'),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
@@ -35,7 +35,7 @@ function create_cpt_service()
         'exclude_from_search'   => false,
         'capability_type'       => 'post',
         'rewrite'               => array('slug' => 'service', 'with_front' => false),
-        'show_in_rest'          => true,
+        'show_in_rest'          => false,
         'publicly_queryable'    => true,
         'has_archive'           => true,
     );
