@@ -72,6 +72,21 @@
     </div>
 </section>
 
+<section class="w-full">
+    <div class="md:h-[80vh] h-auto py-18 flex flex-col gap-6 justify-center items-center px-8 md:px-24">
+        <div class="text-left w-full relative flex overflow-hidden">
+            <h2 class="text-3xl font-bold text-dark-orange after:ml-2 md:after:w-full after:h-[3px] after:bg-dark-orange after:absolute after:bottom-1">Tentang Abuhasdha</h2>
+        </div>
+
+        <div class="flex md:flex-row flex-col gap-6 items-center justify-center">
+            <img class="w-[300px]" src="<?php echo esc_url(get_theme_mod('about_image', get_template_directory_uri() . '/assets/about.png')); ?>" alt="about">
+            <div class="flex flex-col gap-6">
+                <?php echo nl2br(get_theme_mod('about_description')) ?>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="services" style="background-image: url('<?= get_stylesheet_directory_uri() ?>/assets/BG-Produk\ Layanan.png');" class="bg-orange w-full flex flex-col gap-18 bg-no-repeat bg-center bg-cover">
     <div class="px-10 md:px-24 pt-18 pb-4">
         <div class="relative overflow-hidden flex justify-center items-center">
@@ -204,21 +219,6 @@
             <button id="nextBtn" class="absolute right-10 md:right-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer">
             ▶
             </button>
-        </div>
-    </div>
-</section>
-
-<section class="w-full">
-    <div class="md:h-[80vh] h-auto py-18 flex flex-col gap-6 justify-center items-center px-8 md:px-24">
-        <div class="text-left w-full relative flex overflow-hidden">
-            <h2 class="text-3xl font-bold text-dark-orange after:ml-2 md:after:w-full after:h-[3px] after:bg-dark-orange after:absolute after:bottom-1">Tentang Abuhasdha</h2>
-        </div>
-
-        <div class="flex md:flex-row flex-col gap-6 items-center justify-center">
-            <img class="w-[300px]" src="<?php echo esc_url(get_theme_mod('about_image', get_template_directory_uri() . '/assets/about.png')); ?>" alt="about">
-            <div class="flex flex-col gap-6">
-                <?php echo nl2br(get_theme_mod('about_description')) ?>
-            </div>
         </div>
     </div>
 </section>
