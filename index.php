@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<section class="relative w-full h-screen bg-cover bg-center" style="background-image: url('<?php echo esc_url(get_theme_mod('hero_image', get_template_directory_uri() . '/assets/images/default.jpg') ); ?>');">
+<section id="home" class="relative w-full h-screen bg-cover bg-center" style="background-image: url('<?php echo esc_url(get_theme_mod('hero_image', get_template_directory_uri() . '/assets/images/default.jpg')); ?>');">
     <div class="absolute inset-0 bg-gradient-to-r from-orange to-transparent w-[60%]"></div>
     <div class="relative z-10 flex flex-col justify-center items-start h-full text-white gap-4 w-full px-8 md:px-24">
         <h1 class="md:text-5xl text-3xl font-bold text-left md:w-[560px]">
@@ -22,7 +22,7 @@
     </div>
 </section>
 
-<section class="md:h-[80vh] py-18 w-full bg-[#3A3A3A] flex justify-center items-center">
+<section id="about" class="md:h-[80vh] py-18 w-full bg-[#3A3A3A] flex justify-center items-center">
     <div class="flex flex-col gap-18 md:gap-0 md:grid grid-cols-3 justify-arround w-full">
         <div>
             <div class="font-bold text-orange mb-3 flex flex-col justify-center items-center text-center">
@@ -68,6 +68,56 @@
                     <p>Dari inspeksi onsite hingga<br>training tim operasional</p>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<section id="services" style="background-image: url('./assets/BG-Produk\ Layanan.png');" class="bg-orange w-full flex flex-col gap-18 bg-no-repeat bg-center bg-cover">
+    <div class="px-10 md:px-24 pt-18 pb-4">
+        <div class="relative overflow-hidden flex justify-center items-center">
+            <div class="w-full h-[3px] bg-white absolute bottom-1"></div>
+            <div class="bg-orange relative w-fit px-3">
+                <h3 class="text-3xl font-bold text-white text-center">Produk Kami</h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="px-8 md:px-24 pt-6 pb-24 flex flex-col gap-18">
+        <div class="flex flex-wrap md:flex-row flex-col relative md:gap-x-6 md:gap-y-24 gap-24 justify-center items-center">
+            <?php 
+                $layanan_posts = get_posts([
+                    'post_type'      => 'service',
+                    'posts_per_page' => -1,
+                    'orderby'        => 'title',
+                    'order'          => 'ASC',
+                ]);
+                
+                foreach ($layanan_posts as $post) {
+                    ?>
+                        <div class="bg-white/80 relative flex flex-col items-center justify-center flex-[0_0_calc(33.333%_-_1rem)] w-full h-[250px]">
+                            <div class="overflow-visible">
+                                <img class="bg-cover mt-[-60%] h-[300px] overflow-visible" src="<?= get_the_post_thumbnail_url($post->ID) ?>" alt="<?= get_the_title($post->id) ?>">
+                            </div>
+                            <div class="h-[150px] bg-white z-10 absolute bottom-0 px-4 py-6 text-center gap-2 flex flex-col w-full">
+                                <div class="bg-orange absolute top-[-30%] right-[10%] w-[70px] h-[70px] flex flex-col justify-center items-center rounded-full border-4 border-white p-2">
+                                    <img src="<?= get_field('icon', $post->ID) ?>" alt="">
+                                </div>
+                                <h3 class="text-orange font-bold text-lg"><?= get_the_title($post->id) ?></h3>
+                                <p class="text-md"><?= nl2br(wp_trim_words($post->post_content)) ?></p>
+                            </div>
+                        </div>
+                    <?php
+                }
+            ?>
+        </div>
+        <div class="flex flex-col md:flex-row justify-center gap-8">
+            <p class="text-white text-center font-semibold">Ingin berdiskusi lebih lanjut mengenai jenis ban yang paling sesuai<br> untuk kebutuhan operasional Anda? Tim kami siap membantu.</p>
+            <a class="bg-dark-orange px-5 py-3 text-white flex text-base flex-row gap-2 justify-center items-center font-bold" href="#">
+                Konsultasikan Sekarang
+                <svg width="16" height="16" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M7.45801 1.5L7.69824 1.50977C8.25555 1.55645 8.78891 1.76502 9.23242 2.11133C9.67588 2.45764 10.0071 2.92479 10.1875 3.4541L10.2559 3.68457L11.6172 9.12793L11.6611 9.33887C11.844 10.3983 11.4208 11.4814 10.5479 12.1348L10.5488 12.1357L9.05566 13.2549C9.72373 15.0051 10.7535 16.5953 12.0791 17.9209C13.4044 19.2462 14.9943 20.2753 16.7441 20.9434L17.8643 19.4512C18.5593 18.5239 19.7434 18.1011 20.8711 18.3828L26.3154 19.7441H26.3145C27.5999 20.0648 28.4999 21.2192 28.5 22.542V24.2305C28.5 25.3627 28.0506 26.4494 27.25 27.25C26.4494 28.0506 25.3627 28.5 24.2305 28.5H21.4619C10.4378 28.5 1.5 19.5622 1.5 8.53809V5.76953C1.5 4.63726 1.94936 3.55064 2.75 2.75C3.55064 1.94936 4.63726 1.5 5.76953 1.5H7.45801Z" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
         </div>
     </div>
 </section>
