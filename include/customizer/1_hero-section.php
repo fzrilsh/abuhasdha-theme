@@ -4,7 +4,7 @@ const HERO = 'hero_section';
 function register_hero_section($wp_customize)
 {
     $wp_customize->add_section(HERO, array(
-        'title'      => __('Home - Hero Section', 'abuhasdha'),
+        'title'      => __('Hero Section', 'abuhasdha'),
         'priority'   => 30,
     ));
 
