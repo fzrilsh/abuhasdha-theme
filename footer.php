@@ -1,3 +1,11 @@
+<?php
+
+$phones = preg_split('/\r\n|\r|\n/', get_theme_mod('footer_phone'), -1, PREG_SPLIT_NO_EMPTY);
+$addresses = preg_split('/\r\n|\r|\n/', get_theme_mod('footer_address'), -1, PREG_SPLIT_NO_EMPTY);
+$addresses_url = preg_split('/\r\n|\r|\n/', get_theme_mod('footer_address_url'), -1, PREG_SPLIT_NO_EMPTY);
+
+?>
+
     <footer id="contact" class="bg-dark-gray w-full flex flex-col gap-8">
         <div class="px-8 md:px-24 pt-12 pb-4">
             <div class="relative overflow-hidden flex justify-center items-center">
@@ -11,7 +19,7 @@
         <section class="flex flex-col md:grid grid-cols-3 gap-8 px-8 md:px-24 pb-12">
             <div class="text-white flex flex-col gap-4">
                 <p class="font-semibold"><?php bloginfo('description'); ?></p>
-                <a class="bg-dark-orange px-5 py-3 w-fit font-bold" href="mailto:<?php echo get_theme_mod('footer_email'); ?>">Kirim Email</a>
+                <a class="bg-dark-orange px-5 py-3 w-fit font-bold" href="mailto:<?= get_theme_mod('footer_email'); ?>">Kirim Email</a>
             </div>
 
             <div class="text-white flex flex-col gap-4">
@@ -21,7 +29,7 @@
                     </div>
                     <div class="flex flex-col gap-1">
                         <h4 class="font-bold">Email</h4>
-                        <a href="mailto:<?php echo get_theme_mod('footer_email'); ?>"><?php echo get_theme_mod('footer_email'); ?></a>
+                        <a href="mailto:<?= get_theme_mod('footer_email'); ?>"><?= get_theme_mod('footer_email'); ?></a>
                     </div>
                 </div>
 
@@ -32,14 +40,9 @@
                     <div class="flex flex-col gap-1">
                         <h4 class="font-bold">Telepon</h4>
                         <div class="flex flex-col gap-1">
-                            <?php
-                            $phones = preg_split('/\r\n|\r|\n/', get_theme_mod('footer_phone'), -1, PREG_SPLIT_NO_EMPTY);
-
-                            foreach ($phones as $phone) :
-                                $phone_trimmed = trim($phone);
-                            ?>
-                                <a href="tel:<?php echo esc_attr($phone_trimmed); ?>">
-                                    <?php echo esc_html($phone_trimmed); ?>
+                            <?php foreach ($phones as $phone): ?>
+                                <a href="tel:<?= esc_attr(trim($phone)); ?>">
+                                    <?= esc_html(trim($phone)); ?>
                                 </a>
                             <?php endforeach; ?>
                         </div>
@@ -54,18 +57,17 @@
                     </div>
                     <div class="flex flex-col gap-1">
                         <h4 class="font-bold">Lokasi</h4>
-                        <div class="flex flex-col gap-1">
-                            <a href="<?php echo get_theme_mod('footer_address_url') ?>"><?php echo get_theme_mod('footer_address') ?></a>
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <a href="<?php echo get_theme_mod('footer_address_url') ?>"><?php echo get_theme_mod('footer_address') ?></a>
-                        </div>
+                        <?php foreach ($addresses as $addressIndex => $address): ?>
+                            <div class="flex flex-col gap-1">
+                                <a href="<?= esc_attr(trim($addresses_url[$addressIndex])) ?>"><?= esc_attr(trim($address)) ?></a>
+                            </div>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
         </section>
         <section class="bg-dark-orange py-3 text-center">
-            <p class="font-semibold text-white"><?php bloginfo('name'); ?> | <?php echo date('Y'); ?></p>
+            <p class="font-semibold text-white"><?= bloginfo('name'); ?> | <?= date('Y'); ?></p>
         </section>
     </footer>
 
