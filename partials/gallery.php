@@ -18,16 +18,16 @@ $chunks = array_chunk($gallery_ids, 4);
     <div class="flex flex-col justify-center items-center pt-2 pb-24">
         <div class="relative w-[100vw] md:w-[85vw] overflow-hidden px-8 md:px-24">
             <div id="carousel-track" class="flex overflow-x-scroll snap-x snap-mandatory carousel-track scroll-smooth">
-                <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4">
-                    <?php foreach ($chunks as $chunk): ?>
+                <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center">
+                    <?php foreach ($chunks as $chunkIndex => $chunk): ?>
                         <div class="flex flex-row gap-3">
 
                         <?php
-                        foreach ($chunk as $id):
+                        foreach ($chunk as $itemIndex => $id):
                             $url = wp_get_attachment_image_url($id, 'large');
                             $caption = wp_get_attachment_caption($id);
                         ?>
-                            <img class="md:w-full w-[30%]" src="<?= esc_url($url) ?>" alt="<?= $caption ?>">
+                            <img class="md:w-full w-[<?= $chunkIndex % 2 === 0 ? ($itemIndex % 2 === 0 ? '30' : '70') : ($itemIndex % 2 === 0 ? '70' : '30') ?>%]" src="<?= esc_url($url) ?>" alt="<?= $caption ?>">
                         <?php endforeach; ?>
 
                         </div>
@@ -37,10 +37,10 @@ $chunks = array_chunk($gallery_ids, 4);
                 <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4"></div>
             </div>
 
-            <button id="prevBtn" class="absolute left-10 md:left-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer">
+            <button id="prevBtn" class="absolute left-10 md:left-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer select-none">
                 ◀
             </button>
-            <button id="nextBtn" class="absolute right-10 md:right-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer">
+            <button id="nextBtn" class="absolute right-10 md:right-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer select-none">
                 ▶
             </button>
 
