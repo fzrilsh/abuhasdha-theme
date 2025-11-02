@@ -48,7 +48,7 @@ class CustomLogin
                 document.addEventListener('DOMContentLoaded', function() {
                     const form = document.getElementById('loginform');
                     if (form) {
-                        form.action = "<?php echo esc_url(home_url('/' . $this->new_login_slug)); ?>";
+                        form.action = "<?= esc_url(home_url('/' . $this->new_login_slug)); ?>";
                     }
                 });
             </script>
