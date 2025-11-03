@@ -34,7 +34,7 @@ function create_cpt_product()
         'can_export'            => true,
         'exclude_from_search'   => false,
         'capability_type'       => 'post',
-        'rewrite'               => array('slug' => 'product', 'with_front' => false),
+        'rewrite'               => array('slug' => 'products', 'with_front' => false),
         'show_in_rest'          => false,
         'publicly_queryable'    => true,
         'has_archive'           => true,
@@ -42,3 +42,13 @@ function create_cpt_product()
     register_post_type('product', $args);
 }
 add_action('init', 'create_cpt_product', 0);
+
+add_action('init', function() {
+    if (post_type_exists('product')) {
+        add_rewrite_rule(
+            '^products/([^/]+)/([^/]+)/?$',
+            'index.php?tire_type=$matches[1]&size=$matches[2]',
+            'top'
+        );
+    }
+});
