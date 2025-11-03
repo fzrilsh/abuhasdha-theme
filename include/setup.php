@@ -38,13 +38,51 @@ function manage_widget_dashboard()
 }
 add_action('wp_dashboard_setup', 'manage_widget_dashboard');
 
-add_filter('pre_get_document_title', function($title) {
+add_filter('get_the_archive_title_prefix', function ($prefix) {
+    return '';
+});
+
+add_filter('pre_get_document_title', function ($title_original) {
     if (is_front_page()) {
         return get_bloginfo('name');
     }
 
-    return $title;
-}, 999);
+    if (is_archive()) {
+        return get_the_archive_title() . ' List';
+    }
+
+    if (is_search()) {
+        return sprintf('Search Results for: %s', get_search_query());
+    }
+
+    if (is_404()) {
+        return 'Page Not Found';
+    }
+
+    if (is_singular()) {
+        return get_the_title();
+    }
+
+    if (get_queried_object()) {
+        return get_the_title(get_queried_object_id());
+    }
+
+    return $title_original;
+}, 9999);
+
+add_filter('query_vars', function($vars) {
+    $vars[] = 'size';
+    return $vars;
+});
+
+add_filter('the_content', function($content) {
+    $content = preg_replace(
+        '/<ul(.*?)>/',
+        '<ul$1 class="list-disc list-inside marker:text-orange-500 space-y-1 font-semibold">',
+        $content
+    );
+    return $content;
+});
 
 function show_shortcut_widget()
 {
