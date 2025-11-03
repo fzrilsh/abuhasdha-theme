@@ -1,94 +1,7 @@
 {
     "key": "group_68fdc33733403",
-    "title": "Product",
+    "title": "Tire Detail",
     "fields": [
-        {
-            "key": "field_68fdc33787031",
-            "label": "Category",
-            "name": "category",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "otr-tire": "OTR TIRE",
-                "tbr-tire": "TBR TIRE"
-            },
-            "default_value": "OTR TIRE",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "create_options": 0,
-            "save_options": 0
-        },
-        {
-            "key": "field_68fdcb2963a37",
-            "label": "Function",
-            "name": "function",
-            "aria-label": "",
-            "type": "post_object",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "service"
-            ],
-            "post_status": [
-                "publish"
-            ],
-            "taxonomy": "",
-            "return_format": "object",
-            "multiple": 1,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "bidirectional": 0,
-            "ui": 1,
-            "bidirectional_target": []
-        },
-        {
-            "key": "field_68fdc5cbaaa00",
-            "label": "Brand",
-            "name": "brand",
-            "aria-label": "",
-            "type": "select",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "choices": {
-                "tianli": "TIANLI",
-                "hawkway": "HAWKWAY"
-            },
-            "default_value": "tianli",
-            "return_format": "value",
-            "multiple": 0,
-            "allow_null": 0,
-            "allow_in_bindings": 0,
-            "ui": 0,
-            "ajax": 0,
-            "placeholder": "",
-            "create_options": 0,
-            "save_options": 0
-        },
         {
             "key": "field_68fdcc89ca9ea",
             "label": "Size",
@@ -132,12 +45,157 @@
             "append": ""
         },
         {
-            "key": "field_68fddfcb9acd1",
-            "label": "Price",
-            "name": "price",
+            "key": "field_68fdc5cbaaa00",
+            "label": "Brand",
+            "name": "brand",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_690819ee36d1e",
+            "label": "TT\/TL",
+            "name": "tttl",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "TT": "TT",
+                "TL": "TL"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69081a34c3ff9",
+            "label": "Rim",
+            "name": "rim",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69081a537b01a",
+            "label": "TRA",
+            "name": "tra",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69081a5d7b01b",
+            "label": "Load\/Speed Index",
+            "name": "loadspeed_index",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69081a7a7b01c",
+            "label": "Star Rating",
+            "name": "star_rating",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "⭑": "⭑",
+                "⭑⭑": "⭑⭑",
+                "⭑⭑⭑": "⭑⭑⭑",
+                "⭑⭑⭑⭑": "⭑⭑⭑⭑",
+                "⭑⭑⭑⭑⭑": "⭑⭑⭑⭑⭑"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "allow_in_bindings": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": "",
+            "create_options": 0,
+            "save_options": 0
+        },
+        {
+            "key": "field_69081ae77b01d",
+            "label": "Tread Depth",
+            "name": "tread_depth",
             "aria-label": "",
             "type": "number",
-            "instructions": "",
+            "instructions": "(mm\/32ND)",
             "required": 1,
             "conditional_logic": 0,
             "wrapper": {
@@ -150,7 +208,122 @@
             "max": "",
             "allow_in_bindings": 0,
             "placeholder": "",
-            "step": 50000,
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69081bda71d87",
+            "label": "Outer Diameter",
+            "name": "outer_diameter",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "(mm\/inch)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69081bf856545",
+            "label": "Section Width",
+            "name": "section_width",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "(mm\/inch)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69081c1ea4795",
+            "label": "Inflation Pressure",
+            "name": "inflation_pressure",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "(Kpa\/PSI)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69081c44a4796",
+            "label": "Load Capacity",
+            "name": "load_capacity",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "(Kg\/Lbs)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_69081c5ea4797",
+            "label": "Speed",
+            "name": "speed",
+            "aria-label": "",
+            "type": "number",
+            "instructions": "(Km\/mph)",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": "",
+            "max": "",
+            "allow_in_bindings": 0,
+            "placeholder": "",
+            "step": "",
             "prepend": "",
             "append": ""
         },
@@ -195,5 +368,5 @@
     "description": "",
     "show_in_rest": 0,
     "display_title": "",
-    "modified": 1761986060
+    "modified": 1762139250
 }
