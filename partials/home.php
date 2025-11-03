@@ -7,7 +7,7 @@ $hero_description = get_theme_mod('hero_description');
 ?>
 
 <section id="home" class="relative w-full h-screen bg-cover bg-center" style="background-image: url('<?= $background ?>');">
-    <div class="absolute inset-0 bg-gradient-to-r from-orange to-transparent w-[60%]"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-orange to-transparent w-[80%]"></div>
     <div class="relative z-10 flex flex-col justify-center items-start h-full text-white gap-4 w-full px-8 md:px-24">
         <h1 class="md:text-5xl text-3xl font-bold text-left md:w-[560px]">
             <?= $hero_heading ?>
