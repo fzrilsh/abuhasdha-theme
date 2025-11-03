@@ -11,5 +11,5 @@ require get_template_directory() . '/include/custom-post-types.php';
 require get_template_directory() . '/include/customizer.php';
 require get_template_directory() . '/include/dashboard.php';
 require get_template_directory() . '/include/custom-login.php';
-require get_template_directory() . '/include/nav.php';
+require get_template_directory() . '/include/custom-nav.php';
 require get_template_directory() . '/include/override-acf.php';
