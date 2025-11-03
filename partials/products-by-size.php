@@ -4,7 +4,7 @@ $products = get_query_var('products');
 
 ?>
 
-<section class="flex flex-col justify-center items-center pb-20 md:px-20">
+<section class="flex flex-col justify-center items-center py-10 md:px-20">
     <?php if ($products->have_posts()): ?>
         <?php while ($products->have_posts()): $products->the_post(); ?>
             <div class="md:grid md:grid-cols-3 flex flex-col justify-center items-center">
