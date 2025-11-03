@@ -9,4 +9,8 @@
 
 <body <?php body_class('flex flex-col justify-center items-center font-plus-jakarta-sans'); ?>>
     <?php wp_body_open(); ?>
-   <?php require_once get_template_directory() . '/partials/navbar.php' ?>
+    <?php if ( is_front_page() ): 
+        require_once get_template_directory() . '/partials/navbar.php'; 
+    else:
+        require_once get_template_directory() . '/partials/cpt-navbar.php'; 
+    endif; ?>
