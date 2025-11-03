@@ -29,7 +29,7 @@ if(!$products->have_posts()) {
 get_header(); 
 
 set_query_var('products', $products);
-require_once get_template_directory() . '/partials/products.php';
+require_once get_template_directory() . '/partials/products-by-size.php';
 
 get_footer();
 
