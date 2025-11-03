@@ -13,7 +13,7 @@ $products = get_query_var('products');
                         <div id="carousel-track" class="flex overflow-x-hidden snap-x snap-mandatory carousel-track scroll-smooth">
                             <?php foreach (array_filter(explode(',', get_field('images', get_the_ID()))) as $imageID): ?>
                                 <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4">
-                                    <img class="w-full md:h-[350px] h-[250px]" src="<?= wp_get_attachment_url($imageID, 'large') ?>" alt="<?= $imageID ?>">
+                                    <img class="w-full md:h-[350px] h-[250px] object-contain" src="<?= wp_get_attachment_url($imageID, 'large') ?>" alt="<?= $imageID ?>">
                                 </div>
                             <?php endforeach; ?>
                         </div>
