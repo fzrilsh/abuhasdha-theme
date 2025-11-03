@@ -3,11 +3,11 @@
 $background = get_stylesheet_directory_uri() . "/assets/BG-Produk\ Layanan.png";
 $technical_label = esc_html(get_theme_mod('technical_label'));
 $services = preg_split('/\r\n|\r|\n/', get_theme_mod('technical_services'), -1, PREG_SPLIT_NO_EMPTY);
-$layanan_posts = get_posts([
-    'post_type'      => 'service',
-    'posts_per_page' => -1,
-    'orderby'        => 'title',
-    'order'          => 'ASC',
+$functions = get_terms([
+    'taxonomy'   => 'function', 
+    'hide_empty' => false,
+    'orderby'    => 'name',
+    'order'      => 'ASC',
 ]);
 
 ?>
@@ -24,22 +24,22 @@ $layanan_posts = get_posts([
 
     <div class="px-8 md:px-24 md:pt-6 pt-12 pb-24 flex flex-col gap-18">
         <div class="flex flex-wrap md:flex-row flex-col relative md:gap-x-6 gap-y-24 justify-center items-center">
-            <?php foreach ($layanan_posts as $post): ?>
+            <?php foreach ($functions as $function): ?>
                 <div class="bg-white/80 relative flex flex-col items-center justify-center md:flex-[0_0_calc(33%_-_1rem)] w-full md:h-[250px] h-60">
                     <div class="overflow-visible">
-                        <img class="bg-cover mt-[-60%] h-[300px] overflow-visible" src="<?= get_the_post_thumbnail_url($post->ID) ?>" alt="<?= get_the_title($post->id) ?>">
+                        <img class="bg-cover mt-[-60%] h-[300px] overflow-visible" src="<?= get_field('tire_sample', $function) ?>" alt="<?= $function->name ?>">
                     </div>
                     <div class="h-[120px] w-full z-10 absolute top-15 left-0 overflow-hidden">
                         <div class="bg-white absolute w-[120%] h-[80px] z-[-5] -rotate-5 bottom-0"></div>
                         <div class="bg-orange absolute right-[10%] w-[70px] h-[70px] flex flex-col justify-center items-center rounded-full border-4 border-white p-2">
-                                <img src="<?= get_field('icon', $post->ID) ?>" alt="">
+                                <img src="<?= get_field('icon', $function) ?>" alt="<?= $function->name ?>' Icon">
                             </div>
                     </div>
                     <div class="h-[116px] w-full z-10 absolute bottom-0 left-0">
                         <div class="h-full bg-white text-center flex w-full pb-4 justify-center">
                             <div class="h-full w-68 text-wrap">
-                                <h3 class="text-orange font-bold text-xl"><?= get_the_title($post->id) ?></h3>
-                                <p class="text-md"><?= nl2br(wp_trim_words($post->post_content)) ?></p>
+                                <h3 class="text-orange font-bold text-xl"><?= $function->name ?></h3>
+                                <p class="text-md"><?= nl2br(wp_trim_words($function->description)) ?></p>
                             </div>
                         </div>
                     </div>
