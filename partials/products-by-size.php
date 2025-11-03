@@ -9,7 +9,7 @@ $products = get_query_var('products');
         <?php while ($products->have_posts()): $products->the_post(); ?>
             <div class="md:grid md:grid-cols-3 flex flex-col justify-center items-center">
                 <div class="flex flex-col gap-2 py-14 items-center justify-center">
-                    <div class="relative w-[400px] md:w-[600px] overflow-hidden px-8 md:px-24">
+                    <div class="w-full relative md:w-[600px] overflow-hidden px-8 md:px-24">
                         <div id="carousel-track" class="flex overflow-x-hidden snap-x snap-mandatory carousel-track scroll-smooth">
                             <?php foreach (array_filter(explode(',', get_field('images', get_the_ID()))) as $imageID): ?>
                                 <div class="w-full flex flex-col gap-3 flex-shrink-0 snap-center px-4">
