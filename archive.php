@@ -28,6 +28,7 @@ if (!$products) {
         wp_reset_postdata();
     }
 
+    $products = [];
     foreach ($temp as $type_slug => $type_data) {
         $brands_array = [];
         if (!empty($type_data['brands'])) {
