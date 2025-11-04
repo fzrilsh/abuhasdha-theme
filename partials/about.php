@@ -6,7 +6,7 @@ $description = nl2br(get_theme_mod('about_description'));
 ?>
 
 <section id="about" class="w-full">
-    <div class="md:h-[80vh] h-auto py-18 flex flex-col gap-6 justify-center items-center px-8 md:px-24">
+    <div class="container mx-auto md:h-fit h-auto py-35 flex flex-col gap-6 justify-center items-center px-8 md:px-24">
         <div class="text-left w-full relative flex overflow-hidden">
             <h2 class="text-3xl font-bold text-dark-orange after:ml-2 md:after:w-full after:h-[3px] after:bg-dark-orange after:absolute after:bottom-1">Tentang Abuhasdha</h2>
         </div>

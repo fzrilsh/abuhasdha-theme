@@ -13,7 +13,7 @@ $functions = get_terms([
 ?>
 
 <section id="services" style="background-image: url('<?= $background ?>');" class="bg-orange w-full flex flex-col gap-18 bg-no-repeat bg-center bg-cover">
-    <div class="px-10 md:px-24 pt-18 pb-4">
+    <div class="container mx-auto px-10 md:px-24 pt-18 pb-4">
         <div class="relative overflow-hidden flex justify-center items-center">
             <div class="w-full h-[3px] bg-white absolute bottom-1"></div>
             <div class="bg-orange relative w-fit px-3">
@@ -22,7 +22,7 @@ $functions = get_terms([
         </div>
     </div>
 
-    <div class="px-8 md:px-24 md:pt-6 pt-12 pb-24 flex flex-col gap-18">
+    <div class="container mx-auto px-8 md:px-24 md:pt-6 pt-12 pb-24 flex flex-col gap-18">
         <div class="flex flex-wrap md:flex-row flex-col relative md:gap-x-6 gap-y-24 justify-center items-center">
             <?php foreach ($functions as $function): ?>
                 <div class="bg-white/80 relative flex flex-col items-center justify-center md:flex-[0_0_calc(33%_-_1rem)] w-full md:h-[250px] h-60">
@@ -46,7 +46,7 @@ $functions = get_terms([
                 </div>
             <?php endforeach; ?>
         </div>
-        <div class="flex flex-col md:flex-row justify-center gap-8">
+        <div class="container mx-auto flex flex-col md:flex-row justify-center gap-8">
             <p class="text-white text-center font-semibold">Ingin berdiskusi lebih lanjut mengenai jenis ban yang paling sesuai<br> untuk kebutuhan operasional Anda? Tim kami siap membantu.</p>
             <a href="tel:<?= get_query_var('phone_number') ?>" class="bg-dark-orange px-5 py-3 text-white flex text-base flex-row gap-2 justify-center items-center font-bold">
                 Konsultasikan Sekarang
@@ -59,7 +59,7 @@ $functions = get_terms([
 </section>
 
 <section style="background-image: url('<?= $background ?>');" class="w-full flex flex-col pb-12 bg-no-repeat bg-center bg-cover">
-    <div class="px-10 md:px-24 pb-8 flex flex-col gap-8">
+    <div class="container mx-auto px-10 md:px-24 pb-8 flex flex-col gap-8">
         <div class="relative overflow-hidden flex justify-center items-center">
             <div class="w-full h-[3px] bg-white absolute bottom-1"></div>
             <div class="bg-orange relative w-fit px-3">
@@ -69,7 +69,7 @@ $functions = get_terms([
         <p class="text-white text-center font-semibold"><?= $technical_label ?></p>
     </div>
 
-    <div class="px-10 md:px-24 pb-8 flex flex-row flex-wrap gap-4 justify-center">
+    <div class="container mx-auto px-10 md:px-24 pb-8 flex flex-row flex-wrap gap-4 justify-center">
         <?php foreach ($services as $service): ?>
             <span class="bg-dark-gray w-fit px-5 py-3">
                 <p class="text-white font-semibold text-sm md:text-lg text-center"><?= esc_html(trim($service)) ?></p>
@@ -77,7 +77,7 @@ $functions = get_terms([
         <?php endforeach; ?>
     </div>
 
-    <div class="px-10 md:px-24 pb-18 flex flex-row flex-wrap gap-4 justify-center">
+    <div class="container mx-auto px-10 md:px-24 pb-18 flex flex-row flex-wrap gap-4 justify-center">
         <a href="tel:<?= get_query_var('phone_number') ?>" class="bg-dark-orange w-fit px-5 py-3">
             <p class="text-white font-semibold text-sm md:text-lg text-center flex flex-row gap-4 justify-center items-center">
                 Jadwalkan Konsultasi Teknis

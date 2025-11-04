@@ -1,5 +1,5 @@
- <nav class="w-full flex justify-between items-center fixed top-0 z-50 shadow-lg">
-    <div class="w-full flex justify-between relative bg-white">
+<nav class="w-full flex justify-between items-center fixed top-0 z-50 bg-white shadow-lg">
+    <div class="container mx-auto flex justify-between relative">
         <a href="<?= esc_url(home_url('/')); ?>" class="md:px-8 px-4 py-2">
             <img src="<?= get_theme_mod('custom_logo') ? wp_get_attachment_url(get_theme_mod('custom_logo'), 'full') : get_stylesheet_directory_uri() . '/assets/logo.png' ?>" alt="Logo">
         </a>

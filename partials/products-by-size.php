@@ -7,7 +7,7 @@ $products = get_query_var('products');
 <section class="flex flex-col justify-center items-center py-10 md:px-20">
     <?php if ($products->have_posts()): ?>
         <?php while ($products->have_posts()): $products->the_post(); ?>
-            <div class="md:grid md:grid-cols-3 flex flex-col justify-center items-center">
+            <div class="container mx-auto md:grid md:grid-cols-3 flex flex-col justify-center items-center">
                 <div class="flex flex-col gap-2 py-14 items-center justify-center">
                     <div class="w-full relative md:w-[600px] overflow-hidden px-8 md:px-24">
                         <div id="carousel-track" class="flex overflow-x-hidden snap-x snap-mandatory carousel-track scroll-smooth">

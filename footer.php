@@ -7,7 +7,7 @@ $addresses_url = preg_split('/\r\n|\r|\n/', get_theme_mod('footer_address_url'),
 ?>
 
     <footer id="contact" class="bg-dark-gray w-full flex flex-col gap-8">
-        <div class="px-8 md:px-24 pt-12 pb-4">
+        <div class="container mx-auto px-8 md:px-24 pt-12 pb-4">
             <div class="relative overflow-hidden flex justify-center items-center">
                 <div class="w-full h-[3px] bg-white absolute bottom-1"></div>
                 <div class="bg-dark-gray relative w-fit px-3">
@@ -16,7 +16,7 @@ $addresses_url = preg_split('/\r\n|\r|\n/', get_theme_mod('footer_address_url'),
             </div>
         </div>
 
-        <section class="flex flex-col md:grid grid-cols-3 gap-8 px-8 md:px-24 pb-12">
+        <section class="container mx-auto flex flex-col md:grid grid-cols-3 gap-8 px-8 md:px-24 pb-12">
             <div class="text-white flex flex-col gap-4">
                 <p class="font-semibold"><?php bloginfo('description'); ?></p>
                 <a class="bg-dark-orange px-5 py-3 w-fit font-bold" href="mailto:<?= get_theme_mod('footer_email'); ?>">Kirim Email</a>
