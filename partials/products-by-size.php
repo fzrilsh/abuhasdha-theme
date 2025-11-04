@@ -19,10 +19,10 @@ $products = get_query_var('products');
                         </div>
 
                         <!-- Tombol Navigasi -->
-                        <button id="prevBtn" class="prevBtn absolute left-10 md:left-32 top-1/2 -translate-y-1/2 text-white py-2 px-4 cursor-pointer text-black">
+                        <button id="prevBtn" class="prevBtn absolute left-10 md:left-32 top-1/2 -translate-y-1/2 py-2 px-4 cursor-pointer select-none">
                             <i class="fa-solid fa-chevron-left text-black"></i>
                         </button>
-                        <button id="nextBtn" class="nextBtn absolute right-10 md:right-32 top-1/2 -translate-y-1/2 text-white py-2 px-4 cursor-pointer text-black">
+                        <button id="nextBtn" class="nextBtn absolute right-10 md:right-32 top-1/2 -translate-y-1/2 py-2 px-4 cursor-pointer select-none">
                             <i class="fa-solid fa-chevron-right text-black"></i>
                         </button>
 
@@ -94,7 +94,7 @@ $products = get_query_var('products');
                         </tr>
                         <tr class=" bg-gray-200">
                             <td class="flex flex-col px-3 py-2 font-bold">Star Rating</td>
-                            <td class="px-3 py-2 font-bold"><?= get_field('star_rating', get_the_ID()) ?></td>
+                            <td class="px-3 py-2 font-bold text-lg"><?= get_field('star_rating', get_the_ID()) ?></td>
                         </tr>
                         <tr class="bg-orange">
                             <td class="flex flex-col px-3 py-2 font-bold">
