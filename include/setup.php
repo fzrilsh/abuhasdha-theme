@@ -47,8 +47,9 @@ add_filter('pre_get_document_title', function ($title_original) {
         return get_bloginfo('name');
     }
 
+    $size = get_query_var('size');
     if (is_archive()) {
-        return get_the_archive_title() . ' List';
+        return get_the_archive_title() . ($size ? ' ' . $size : '') . ' List';
     }
 
     if (is_search()) {
