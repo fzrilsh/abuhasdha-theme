@@ -38,13 +38,13 @@ $chunks = array_chunk($gallery_ids, 4);
             </div>
 
             <button id="prevBtn" class="absolute left-10 md:left-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer select-none">
-                ◀
+                <img class="w-3 h-5 object-cover rotate-180" src="<?= get_template_directory_uri() . '/assets/icons/arrow-right.png' ?>" alt="Arrow Left">
             </button>
             <button id="nextBtn" class="absolute right-10 md:right-32 top-1/2 -translate-y-1/2 bg-dark-orange text-white py-2 px-4 shadow-md cursor-pointer select-none">
-                ▶
+                <img class="w-3 h-5 object-cover" src="<?= get_template_directory_uri() . '/assets/icons/arrow-right.png' ?>" alt="Arrow Right">
             </button>
 
-            <div id="carousel-dots" class="w-full h-fit flex justify-center mt-6 gap-2"></div>
+            <div id="carousel-dots" class="w-full h-fit flex justify-center mt-6 gap-5"></div>
         </div>
     </div>
 </section>
