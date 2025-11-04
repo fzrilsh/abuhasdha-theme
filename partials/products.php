@@ -21,9 +21,9 @@ $products = get_query_var('products');
                     </div>
                     <div class="flex flex-col gap-3">
                         <?php foreach ($sizes as $size): ?>
-                            <a href="<?= esc_url($data['link']) . $size; ?>" class="bg-dark-orange flex flex-row gap-8 items-center justify-center px-6 py-3">
+                            <a href="<?= esc_url($data['link']) . $size; ?>" class="bg-dark-orange flex flex-row gap-8 items-center justify-center px-6 py-3 group">
                                 <h3 class="text-xl font-bold"><?= esc_html($size) ?></h3>
-                                <i class="fa-solid fa-chevron-right"></i>
+                                <i class="fa-solid fa-chevron-right transition-transform duration-300 group-hover:translate-x-2"></i>
                             </a>
                         <?php endforeach; ?>
                     </div>
