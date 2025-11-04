@@ -94,7 +94,7 @@ $products = get_query_var('products');
                         </tr>
                         <tr class=" bg-gray-200">
                             <td class="flex flex-col px-3 py-2 font-bold">Star Rating</td>
-                            <td class="px-3 py-2 font-bold text-lg">
+                            <td class="px-3 py-2 font-bold">
                                 <?php for ($i=0; $i < (int)get_field('star_rating', get_the_ID()); $i++): ?>
                                     <i class="fa-solid fa-star"></i>
                                 <?php endfor; ?>
