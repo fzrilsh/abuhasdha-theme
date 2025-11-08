@@ -37,7 +37,7 @@ $functions = get_terms([
                     </div>
                     <div class="h-[116px] w-full z-2 absolute bottom-0 left-0">
                         <div class="h-full bg-white text-center flex w-full pb-4 justify-center">
-                            <div class="h-full w-68 text-wrap">
+                            <div class="h-full w-68 overflow-hidden">
                                 <h3 class="text-orange font-bold text-xl"><?= $function->name ?></h3>
                                 <p class="text-md"><?= nl2br(wp_trim_words($function->description)) ?></p>
                             </div>
