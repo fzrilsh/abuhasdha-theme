@@ -79,7 +79,7 @@ add_filter('query_vars', function($vars) {
 add_filter('the_content', function($content) {
     $content = preg_replace(
         '/<ul(.*?)>/',
-        '<ul$1 class="list-disc list-outside pl-5 marker:text-orange-500 space-y-1 font-semibold">',
+        '<ul$1 class="list-disc list-outside pl-5 marker:text-orange-500 space-y-1 font-semibold text-sm">',
         $content
     );
     return $content;
