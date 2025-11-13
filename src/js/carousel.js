@@ -51,21 +51,35 @@ document.addEventListener("DOMContentLoaded", () => {
             nextBtn.classList.toggle('pointer-events-none', atEnd);
         }
 
+        // Helpers for edges
+        const isAtStart = () => gallery.scrollLeft <= 2;
+        const isAtEnd = () => gallery.scrollLeft >= (gallery.scrollWidth - gallery.clientWidth - 2);
+
         let ticking = false;
         gallery.addEventListener('scroll', () => {
             if (!ticking) {
                 window.requestAnimationFrame(() => {
-                    const galleryCenter = gallery.scrollLeft + gallery.clientWidth / 2;
-                    let closestIndex = current;
-                    let minDelta = Infinity;
-                    anchors.forEach((fig, i) => {
-                        const figCenter = fig.offsetLeft + fig.offsetWidth / 2;
-                        const delta = Math.abs(figCenter - galleryCenter);
-                        if (delta < minDelta) { minDelta = delta; closestIndex = i; }
-                    });
-                    if (closestIndex !== current) {
-                        current = closestIndex;
+                    if (isAtStart()) {
+                        current = 0;
                         updateDots();
+                    } else if (isAtEnd()) {
+                        current = anchors.length - 1;
+                        updateDots();
+                    } else {
+                        const galleryCenter = gallery.scrollLeft + gallery.clientWidth / 2;
+                        let closestIndex = current;
+                        let minDelta = Infinity;
+                        anchors.forEach((fig, i) => {
+                            const rect = fig.getBoundingClientRect();
+                            const gRect = gallery.getBoundingClientRect();
+                            const figCenter = (rect.left - gRect.left) + gallery.scrollLeft + rect.width / 2;
+                            const delta = Math.abs(figCenter - galleryCenter);
+                            if (delta < minDelta) { minDelta = delta; closestIndex = i; }
+                        });
+                        if (closestIndex !== current) {
+                            current = closestIndex;
+                            updateDots();
+                        }
                     }
                     updateButtons();
                     ticking = false;
