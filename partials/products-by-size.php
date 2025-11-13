@@ -1,10 +1,8 @@
 <?php
-// Ambil query kustom Anda (dari cache atau query var)
 $products = get_query_var('products');
 ?>
 
 <section class="container mx-auto flex flex-col justify-center items-center py-6 px-6 md:py-10">
-
     <?php if ($products->have_posts()): ?>
         <?php while ($products->have_posts()): $products->the_post(); ?>
 
