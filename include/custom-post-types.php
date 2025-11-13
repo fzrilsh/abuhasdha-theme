@@ -43,11 +43,17 @@ function create_cpt_product()
 }
 add_action('init', 'create_cpt_product', 0);
 
-add_action('init', function() {
+add_action('init', function () {
     if (post_type_exists('product')) {
         add_rewrite_rule(
             '^products/([^/]+)/([^/]+)/?$',
             'index.php?tire_type=$matches[1]&size=$matches[2]',
+            'top'
+        );
+
+        add_rewrite_rule(
+            '^products/([^/]+)/?$',
+            'index.php?tire_type=$matches[1]',
             'top'
         );
     }
