@@ -28,7 +28,7 @@ $products = get_query_var('products');
                 </div>
 
                 <div class="w-full h-fit flex flex-col gap-4 px-4 md:px-0">
-                    <div class="w-full flex flex-col gap-y-5 md:grid md:grid-cols-2 md:gap-x-10 md:gap-y-5 md:items-start">
+                    <div class="w-full flex flex-col gap-y-5 md:grid md:grid-cols-2 md:gap-x-5 md:gap-y-5 md:items-start">
 
                         <div>
                             <h3 class="font-semibold text-lg text-orange">Size</h3>
@@ -45,10 +45,10 @@ $products = get_query_var('products');
                             <p class="font-bold text-3xl"><?= strtoupper(get_field('brand', get_the_ID())) ?></p>
                         </div>
 
-                        <div class="flex flex-row gap-2 items-center pt-2">
+                        <div class="flex flex-row flex-nowrap gap-1 items-center pt-2 overflow-x-auto">
                             <?php foreach (get_the_terms(get_the_ID(), 'function') as $function): ?>
-                                <div class="bg-orange w-[50px] h-[50px] flex flex-col justify-center items-center rounded-full border-4 border-white p-2">
-                                    <img src="<?= get_field('icon', 'term_' . $function->term_id); ?>" alt="<?= $function->name ?>">
+                                <div class="bg-orange w-[50px] h-[50px] min-w-[50px] min-h-[50px] aspect-square shrink-0 flex flex-col justify-center items-center rounded-full overflow-hidden border-4 border-white p-2">
+                                    <img class="w-full h-full object-contain" src="<?= get_field('icon', 'term_' . $function->term_id); ?>" alt="<?= $function->name ?>">
                                 </div>
                             <?php endforeach; ?>
                         </div>
