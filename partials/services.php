@@ -25,7 +25,7 @@ $functions = get_terms([
     <div class="container mx-auto px-8 md:px-24 md:pt-6 pt-12 pb-24 flex flex-col gap-18">
         <div class="flex flex-wrap md:flex-row flex-col relative md:gap-x-6 gap-y-24 justify-center items-center">
             <?php foreach ($functions as $function): ?>
-                <div class="bg-white/80 relative flex flex-col items-center justify-center md:flex-[0_0_calc(33%_-_1rem)] w-full md:h-[250px] h-60">
+                <a href="<?= get_term_link(get_field('tire_type', $function)) ?>" class="bg-white/80 relative flex flex-col items-center justify-center md:flex-[0_0_calc(33%_-_1rem)] w-full md:h-[250px] h-60">
                     <div class="overflow-visible">
                         <img class="bg-cover mt-[-60%] h-[300px] overflow-visible" src="<?= get_field('tire_sample', $function) ?>" alt="<?= $function->name ?>">
                     </div>
@@ -43,7 +43,7 @@ $functions = get_terms([
                             </div>
                         </div>
                     </div>
-                </div>
+                </a>
             <?php endforeach; ?>
         </div>
         <div class="container mx-auto flex flex-col md:flex-row justify-center gap-8">
